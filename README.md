@@ -2,7 +2,7 @@
 
 **Mahmut Özkızılcık - 2220765019**
 
-## 📌 Project Overview
+##  Project Overview
 
 This project implements a **video-based Human Activity Recognition (HAR)** system that classifies six human actions: **boxing, handclapping, handwaving, jogging, running, and walking**.
 
@@ -10,7 +10,7 @@ The pipeline consists of two main stages:
 1. **Feature Extraction** — Using [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) (BODY_25 model) to extract 2D skeleton keypoints from raw video frames
 2. **Classification** — Four different machine learning / deep learning models are trained and compared
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```
 ├── FeatureExtraction.py        # OpenPose-based skeleton keypoint extraction
@@ -22,7 +22,7 @@ The pipeline consists of two main stages:
 └── README.md                   # This file
 ```
 
-## 🔬 Methodology
+##  Methodology
 
 ### Feature Extraction (OpenPose)
 - Each video frame is processed to detect **25 body keypoints** using the BODY_25 model
@@ -42,19 +42,19 @@ The pipeline consists of two main stages:
 
 | Rank | Model | Key Strength |
 |:----:|-------|-------------|
-| 🥇 | **1D-CNN** | Best overall generalization and speed differentiation |
-| 🥈 | **LSTM** | Strong on upper-body actions, captured long-term dependencies |
-| 🥉 | **GAK + SVM** | Perfect separation of upper vs. lower body groups |
+| 1 | **1D-CNN** | Best overall generalization and speed differentiation |
+| 2 | **LSTM** | Strong on upper-body actions, captured long-term dependencies |
+| 3 | **GAK + SVM** | Perfect separation of upper vs. lower body groups |
 | 4 | **Shapelet + MLP** | Limited capacity for complex temporal patterns |
 
-## 📊 Key Findings
+##  Key Findings
 
 - **Deep Learning models** (1D-CNN, LSTM) significantly outperformed traditional approaches
 - **1D-CNN** achieved the best accuracy (90%) — convolutional filters effectively captured local temporal patterns
 - The most challenging classification task was distinguishing between **jogging vs. running** due to kinematic similarity
 - **Handclapping vs. handwaving** confusion was resolved well by sequential models (LSTM)
 
-## ⚙️ Preprocessing Pipeline
+##  Preprocessing Pipeline
 
 1. **Sequence Length Analysis** — Visualized distribution of video frame counts (bimodal: ~100-150 and ~400-500 frames)
 2. **Padding** — All sequences padded to match the longest video (824 frames)
@@ -62,7 +62,7 @@ The pipeline consists of two main stages:
 4. **Train/Test Split** — 80/20 stratified split (479 training, 120 testing samples)
 5. **Resampling** — For GAK+SVM, sequences resampled to 100 frames for computational feasibility
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -79,7 +79,7 @@ pip install -r requirements.txt
 ### Dataset
 
 The extracted feature files (`.npz`) can be downloaded from:
-🔗 [Google Drive - Extracted Features](https://drive.google.com/file/d/1CJSfAfKf-7oFNLP99_0JM3MaIyXUdUBv/view?usp=sharing)
+ [Google Drive - Extracted Features](https://drive.google.com/file/d/1CJSfAfKf-7oFNLP99_0JM3MaIyXUdUBv/view?usp=sharing)
 
 Place the downloaded files in the `extracted_features/` directory.
 
@@ -100,7 +100,7 @@ Or open the Jupyter notebooks for interactive execution with visualizations:
 jupyter notebook project.ipynb
 ```
 
-## 📚 Technologies Used
+## Technologies Used
 
 - **OpenPose** — Skeleton keypoint extraction (BODY_25 model)
 - **tslearn** — Time series classification (GAK kernel, Shapelet Transform, resampling)
@@ -108,6 +108,6 @@ jupyter notebook project.ipynb
 - **PyTorch** — Deep learning models (MLP, LSTM, 1D-CNN)
 - **NumPy / Pandas / Matplotlib / Seaborn** — Data processing & visualization
 
-## 📝 License
+## License
 
-This project was developed as part of **AIN 313 - Introduction to Machine Learning** course assignment at Akdeniz University.
+This project was developed as part of **AIN 313 - Introduction to Machine Learning** course assignment at Hacettepe University.
