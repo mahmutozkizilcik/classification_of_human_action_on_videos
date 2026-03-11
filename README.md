@@ -1,4 +1,4 @@
-# AIN 313 - Assignment 4: Human Activity Recognition using Skeleton-Based Features
+# Human Activity Recognition using Skeleton-Based Features
 
 **Mahmut Özkızılcık - 2220765019**
 
